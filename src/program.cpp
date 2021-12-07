@@ -7,6 +7,7 @@ using std::endl;
 void drawMatrix(int matrixArray[3][3]);
 void drawBoard();
 bool checkWinner(int matrixArray[3][3]);
+bool checkGameStatus(int matrixArray[3][3]);
 
 int main()
 {
@@ -16,8 +17,10 @@ int main()
 	drawMatrix(scores);
 	
 	bool winner = false;
+	bool isGameOver = false;
+
 	int player = 0;
-	while(!winner)
+	while(!winner && !isGameOver)
 	{
 		cout << endl;
 
@@ -40,6 +43,11 @@ int main()
 		drawMatrix(scores);
 		
 		winner = checkWinner(scores);
+		isGameOver = checkGameStatus(scores);
+		if(isGameOver)
+		{
+			cout << "Game is over, no winner" << endl;
+		}
 		++player;
 	}
 	
@@ -133,6 +141,26 @@ bool checkWinner(int matrixArray[3][3])
 		return false;
 }
 
+bool checkGameStatus(int matrixArray[3][3])
+{
+	bool isGameOver = true;
+
+	for(int i = 0; i < 3; ++i)
+	{
+		for(int j = 0; j < 3; ++j)
+		{
+			if(matrixArray[i][j] == 0)
+			{
+				
+				isGameOver = false;
+				break;
+			}	
+		}	
+	}
+	
+
+	return isGameOver;
+}
 void drawMatrix(int matrixArray[3][3])
 {
 	for(int i = 0; i < 3; ++i)
@@ -145,6 +173,8 @@ void drawMatrix(int matrixArray[3][3])
 		cout << endl;
 	}
 }
+
+
 void drawSmallboard()
 {
 	cout << endl;
