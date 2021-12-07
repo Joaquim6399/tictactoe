@@ -6,6 +6,8 @@ using std::endl;
 
 void drawMatrix(int matrixArray[3][3]);
 void drawBoard();
+bool checkWinner(int matrixArray[3][3]);
+
 int main()
 {
 
@@ -33,14 +35,66 @@ int main()
 		if(player % 2 == 0)
 			scores[row - 1][column - 1] = 1;
 		else
-			scores[row - 1][column - 1] = 2;
+			scores[row - 1][column - 1] = -1;
 		
 		drawMatrix(scores);
-
+		
+		winner = checkWinner(scores);
 		++player;
 	}
 	
 	return 0;
+}
+
+
+bool checkWinner(int matrixArray[3][3])
+{
+
+		int sum = 0;
+		//Check rows
+		for(int i = 0; i < 3; ++i)
+		{
+			for(int j = 0; j < 3; ++j)
+			{
+				sum += matrixArray[i][j];
+			}
+
+
+			if(sum == 3)
+			{
+				cout << "Player 1 winner, congratulations!" << endl;
+				return true;
+			} else if(sum == -3)
+			{
+					
+				cout << "Player 2 winner, congratulations!" << endl;
+				return true;
+			}
+		}
+		
+		sum = 0;
+		for(int i = 0; i < 3; ++i)
+		{
+			for(int j = 0; j < 3; ++j)
+			{
+				sum += matrixArray[j][i];
+			}
+			
+
+
+			if(sum == 3)
+			{
+				cout << "Player 1 winner, congratulations!" << endl;
+				return true;	
+			} else if(sum == -3)
+			{
+					
+				cout << "Player 2 winner, congratulations!" << endl;
+				return true;	
+			}
+		}
+
+		return false;
 }
 
 void drawMatrix(int matrixArray[3][3])
