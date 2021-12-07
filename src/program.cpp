@@ -93,7 +93,43 @@ bool checkWinner(int matrixArray[3][3])
 				return true;	
 			}
 		}
+		
+		sum = 0;
+		//Check diagonally
+		for(int i = 0; i < 3; ++i)
+		{
+			sum += matrixArray[i][i];		
+		}
 
+		
+		if(sum == 3)
+		{
+			cout << "Player 1 winner, congratulations!" << endl;
+			return true;
+		} else if(sum == -3)
+		{
+				
+			cout << "Player 2 winner, congratulations!" << endl;
+			return true;	
+		}
+		
+		sum = 0;	
+		for(int i = 2; i >= 0; --i)
+		{
+			sum += matrixArray[i][abs(i - 2)];
+		}
+
+		if(sum == 3)
+		{
+			cout << "Player 1 winner, congratulations!" << endl;
+			return true;
+		} else if(sum == -3)
+		{
+				
+			cout << "Player 2 winner, congratulations!" << endl;
+			return true;	
+		}
+		
 		return false;
 }
 
