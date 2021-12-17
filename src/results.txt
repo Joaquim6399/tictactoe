@@ -1,0 +1,69 @@
+   |   |   
+---|---|---
+   |   |   
+---|---|---
+   |   |   
+
+Player 1(X), enter row and column: 
+ X |   |   
+---|---|---
+   |   |   
+---|---|---
+   |   |   
+
+Player 2(O), enter row and column: 
+ X |   | O 
+---|---|---
+   |   |   
+---|---|---
+   |   |   
+
+Player 1(X), enter row and column: 
+ X |   | O 
+---|---|---
+   | X |   
+---|---|---
+   |   |   
+
+Player 2(O), enter row and column: 
+ X |   | O 
+---|---|---
+   | X |   
+---|---|---
+   |   | O 
+
+Player 1(X), enter row and column: 
+ X |   | O 
+---|---|---
+   | X |   
+---|---|---
+ X |   | O 
+
+Player 2(O), enter row and column: 
+ X |   | O 
+---|---|---
+ O | X |   
+---|---|---
+ X |   | O 
+
+Player 1(X), enter row and column: 
+ X |   | O 
+---|---|---
+ O | X | X 
+---|---|---
+ X |   | O 
+
+Player 2(O), enter row and column: 
+ X |   | O 
+---|---|---
+ O | X | X 
+---|---|---
+ X | O | O 
+
+Player 1(X), enter row and column: 
+ X | X | O 
+---|---|---
+ O | X | X 
+---|---|---
+ X | O | O 
+Game is over, no winner
